@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native'
-
+import CustomButton from './customButton'
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -55,6 +55,15 @@ export const ScreenTwo = props => (
         })}>
             <Text>Go to a Normal</Text>
         </TouchableHighlight>
+
+
+        <CustomButton
+            onPress={() => props.navigation.navigate('Fancy', {
+                props: {
+                    foo: "bar"
+                }
+            })}
+        />
     </View>
 );
 

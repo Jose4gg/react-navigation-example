@@ -4,7 +4,7 @@ import { NativeModules, Easing, Dimensions, Animated, View } from 'react-native'
 import { CardStack, Transitioner, CardStackStyleInterpolator, NavigationActions } from 'react-navigation';
 import RouteConfig from './routes'
 import { navigator } from './navigator'
-
+import FancyAnimation from './FancyAnimation'
 
 class CardStackTransitioner extends Component<DefaultProps, Props, void> {
 
@@ -44,8 +44,8 @@ class CardStackTransitioner extends Component<DefaultProps, Props, void> {
 
     _configureTransition = (transitionProps, prevTransitionProps) => {
         return {
-            duration: 1000,
-            easing: Easing.in,
+            timing: Animated.timing,
+            delay: 500,
         }
     };
 
@@ -91,6 +91,13 @@ class CardStackTransitioner extends Component<DefaultProps, Props, void> {
                     <Animated.View style={[{ transform: [{ scale: position }] }, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]} key={scene.index}>
                         <Scene {...props} />
                     </Animated.View>
+                )
+            }
+            case 'fancy': {
+                return (
+                    <FancyAnimation key={scene.index}>
+
+                    </FancyAnimation>
                 )
             }
             default: {

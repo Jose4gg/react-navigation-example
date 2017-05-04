@@ -20,5 +20,8 @@ export default {
     },
     'Normal': {
         screen: ScreenTwo,
+    },
+    'Fancy': {
+        screen: ScreenTwo,
     }
 }
