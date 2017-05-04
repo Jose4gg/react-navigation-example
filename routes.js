@@ -23,5 +23,6 @@ export default {
     },
     'Fancy': {
         screen: ScreenTwo,
+        mode: "fade-in"        
     }
 }
